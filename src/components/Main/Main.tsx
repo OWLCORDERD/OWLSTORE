@@ -1,7 +1,10 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import Banner from 'components/Banner/Banner';
 import Navbar from '../Navbar/Navbar';
 import './main.scss';
+import ClothesPeed from '../ClothesPeed/ClothesPeed';
+import '../../assets/GlobalStyle.scss';
 
 const Main = (): JSX.Element => {
   const Container = styled.div`
@@ -12,6 +15,10 @@ const Main = (): JSX.Element => {
   return (
     <Container>
       <Navbar />
+      <section>
+        <Banner />
+        <ClothesPeed />
+      </section>
     </Container>
   );
 };

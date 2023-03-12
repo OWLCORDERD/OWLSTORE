@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { BiSearchAlt } from 'react-icons/bi';
 import logoImg from '../../assets/image/main_logo.png';
@@ -6,76 +6,92 @@ import '../../assets/GlobalStyle.scss';
 import './navbar.scss';
 
 const Navbar = (): JSX.Element => {
+  const [inputValue, setInputValue] = useState('');
+
   const NavContainer = styled.div`
-    position: relative;
+    position: sticky;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 12vh;
+    height: 15vh;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3rem 4rem;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    z-index: 100;
+    background-color: #fff;
   `;
 
-  const LogoSearchBox = styled.div`
+  const NavLogo = styled.div`
     position: relative;
-    width: 45rem;
-    height: 10rem;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    padding: 0 5rem;
+    justify-content: space-between;
+    align-items: center;
+  `;
+
+  const Nav = styled.nav`
+    position: relative;
+    padding: 0 10rem;
+    width: 100%;
+    height: 7vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #000;
+
+    &::before {
+      position: absolute;
+      width: 2px;
+      height: 40%;
+      background-color: rgba(255, 255, 255, 0.8);
+      content: '';
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   `;
 
   const Navmenu = styled.ul`
     position: relative;
-    width: 40rem;
-    height: 3rem;
+    width: 100%;
+    height: 7vh;
   `;
 
   const MenuList = styled.li`
     display: inline-block;
-    width: 20%;
-    height: 100%;
-    background-color: #fff;
-    color: #000;
-    font-size: 1.2rem;
-    line-height: 3rem;
-    margin-right: 2rem;
+    width: 25%;
+    height: max-content;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 7vh;
     text-align: center;
     font-family: 'Do Hyeon', sans-serif;
-
-    &:hover {
-      background-color: #000;
-      color: #fff;
-      cursor: pointer;
-      transition: all 0.3s ease-in;
-    }
-
-    &.active {
-      background-color: #000;
-      color: #fff;
-    }
+    cursor: pointer;
   `;
   return (
     <NavContainer>
-      <LogoSearchBox>
+      <NavLogo>
         <div className="logo">
           <img src={logoImg} alt="" />
           <h1 className="title">OWL STORE</h1>
         </div>
+      </NavLogo>
 
-        <div className="Search-box">
-          <input type="text" placeholder="의류 키워드를 검색하세요." />
-          <BiSearchAlt className="Search-button" />
-        </div>
-      </LogoSearchBox>
+      <Nav>
+        <Navmenu>
+          <MenuList>HOME</MenuList>
+          <MenuList>WOMAN</MenuList>
+          <MenuList>MEN</MenuList>
+          <MenuList>BEST</MenuList>
+        </Navmenu>
 
-      <Navmenu>
-        <MenuList className="active">HOME</MenuList>
-        <MenuList>공지사항</MenuList>
-        <MenuList>랭킹</MenuList>
-        <MenuList>Style Peed</MenuList>
-      </Navmenu>
+        <Navmenu>
+          <MenuList>공지사항</MenuList>
+          <MenuList>Style Peed</MenuList>
+          <MenuList>커뮤니티</MenuList>
+        </Navmenu>
+      </Nav>
     </NavContainer>
   );
 };
