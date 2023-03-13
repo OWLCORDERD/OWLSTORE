@@ -42,13 +42,12 @@ const ClothesPeed = (): JSX.Element => {
 
   const PeedItemBox = styled.div`
     position: relative;
-    width: 1800px;
+    width: 1600px;
     height: 100%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
   `;
 

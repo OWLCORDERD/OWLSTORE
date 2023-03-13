@@ -1,11 +1,21 @@
 @import '../../../assets/GlobalStyle.scss';
 
+
+.Product-control{
+    position: relative;
+    width : 100%;
+    height : 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+
 .Product-title{
     position: relative;
     top : 0;
     left : 0;
     width : 100%;
-    height : 10rem;
+    height : 8rem;
     z-index: 100;
     display: flex;
     flex-direction: column;
@@ -19,57 +29,36 @@
 
     p{
         word-break: keep-all;
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: bold;
         font-family: $DoHyeon-font;
     }
 }
 
 .arrow-container{
-    position: absolute;
-    width : 100%;
-    height : 100%;
+    position: relative;
+    width : 5rem;
+    height : 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    &::before{
-        position: absolute;
-        top : 0;
-        left : 0;
-        width : 15%;
-        height : 100%;
-        background: linear-gradient(to right, rgba(255,255,255,0.8), transparent);
-        content : '';
-        z-index: 10;
-    }
-
-    &::after{
-        position: absolute;
-        top : 0;
-        right : 0;
-        width : 15%;
-        height : 100%;
-        background: linear-gradient(to left, rgba(255,255,255,0.5), transparent);
-        content : '';
-        z-index: 10;
-    }
-
     .arrow-item{
         position: relative;
-        width : 4rem;
-        height : 4rem;
+        width : 2rem;
+        height : 2rem;
         background-color: rgba($color: #000000, $alpha: 0.8);
         color : #fff;
         cursor: pointer;
         z-index: 100;
-        font-size: 3rem;
+        font-size: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
         border : none;
         z-index: 100;
     }
+}
 }
 
 .scroll-container{
@@ -83,14 +72,14 @@
 
     .Product-itemBox{
         position: relative;
-        width : calc(1800px / 4);
-        height : 600px;
+        width : calc(1800px / 5);
+        height : 550px;
         margin : 0 20px;
 
         .Product-Imgbox{
             position: relative;
-            width : calc(1800px / 4);
-            height : 500px;
+            width : calc(1800px / 5);
+            height : 350px;
             overflow: hidden;
         
             img{
@@ -152,28 +141,28 @@
 
             .Product-brand{
                 width : 100%;
-                height : 20px;
+                height : 30px;
                 word-break: keep-all;
 
                 h1{
                     width : 100%;
-                    font-size: 1.4rem;
+                    font-size: 1.2rem;
                     font-family: $DoHyeon-font;
-                    height : 20px;
+                    height : max-content;
                 }
             }
 
             .Product-name{
                 overflow: hidden;
                 width : 80%;
-                height : 100px;
+                height : 90px;
                 word-break: keep-all;
                 padding : 10px 0;
 
                 h1{
                     width : 100%;
                     height : 100%;
-                    font-size: 1.2rem;
+                    font-size: 1.1rem;
                     font-family: $DoHyeon-font;
                     color : #7A7A7A;
                 }
@@ -192,7 +181,7 @@
 
             .Product-price{
                 width : 100%;
-                height : 50px;
+                height : 70px;
 
                 h1{
                     font-weight: bold;
@@ -202,4 +191,5 @@
             }
         }
     }
+    
 }

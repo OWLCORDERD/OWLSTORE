@@ -5,6 +5,7 @@ import Navbar from '../Navbar/Navbar';
 import './main.scss';
 import ClothesPeed from '../ClothesPeed/ClothesPeed';
 import '../../assets/GlobalStyle.scss';
+import GlobalPeed from '../GlobalPeed/GlobalPeed';
 
 const Main = (): JSX.Element => {
   const Container = styled.div`
@@ -16,7 +17,10 @@ const Main = (): JSX.Element => {
     <Container>
       <Navbar />
       <section>
+        <GlobalPeed />
         <Banner />
+        <ClothesPeed />
+        <ClothesPeed />
         <ClothesPeed />
       </section>
     </Container>

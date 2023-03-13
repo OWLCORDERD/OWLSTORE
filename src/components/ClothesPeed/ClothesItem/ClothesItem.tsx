@@ -19,7 +19,7 @@ const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
 
   const firstProduct = scrollZone?.querySelectorAll('img')[0] as HTMLElement;
 
-  const ProductWidth: number = firstProduct.clientWidth + 20;
+  const ProductWidth: number = firstProduct.clientWidth + 40;
 
   scrollZone.scrollLeft += divId === 'left' ? -ProductWidth : ProductWidth;
 };
@@ -31,36 +31,39 @@ const ClothesItem = ({ itemsDB, example }: dataType): JSX.Element => {
 
   return (
     <>
-      <div className="Product-title">
-        <h1>SEASON COAT</h1>
-        <p>
-          2022시즌 상품들을 리뉴얼하여 공구중입니다. <br />
-          다양한 2023 시즌 코트 상품들을 재고준비 중이니 많은 관심 부탁드립니다.
-        </p>
-      </div>
+      <div className="Product-control">
+        <div className="Product-title">
+          <h1>SEASON COAT</h1>
+          <p>
+            2022시즌 상품들을 리뉴얼하여 공구중입니다. <br />
+            다양한 2023 시즌 코트 상품들을 재고준비 중이니 많은 관심
+            부탁드립니다.
+          </p>
+        </div>
 
-      <div className="arrow-container">
-        <button
-          type="button"
-          className="arrow-item"
-          id="left"
-          onClick={(e) => {
-            handleClick(e);
-          }}
-        >
-          <BsArrowLeftShort />
-        </button>
+        <div className="arrow-container">
+          <button
+            type="button"
+            className="arrow-item"
+            id="left"
+            onClick={(e) => {
+              handleClick(e);
+            }}
+          >
+            <BsArrowLeftShort />
+          </button>
 
-        <button
-          type="button"
-          className="arrow-item"
-          id="right"
-          onClick={(e) => {
-            handleClick(e);
-          }}
-        >
-          <BsArrowRightShort />
-        </button>
+          <button
+            type="button"
+            className="arrow-item"
+            id="right"
+            onClick={(e) => {
+              handleClick(e);
+            }}
+          >
+            <BsArrowRightShort />
+          </button>
+        </div>
       </div>
 
       <div className="scroll-container">
